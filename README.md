@@ -1,2 +1,2 @@
-# Udacity location-reminder
+# Udacity Location Reminder
 Udacity project Location Reminder

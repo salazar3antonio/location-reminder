@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!--Data item that holds the reminder details-->
+        <variable
+            name="reminderDataItem"
+            type="com.udacity.project4.locationreminders.reminderslist.ReminderDataItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_description_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintEnd_toEndOf="@+id/tv_reminder_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_reminder_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_reminder_title"
+            android:text="@string/text_description_header"
+            tools:text="Description" />
+
+        <TextView
+            android:id="@+id/tv_reminder_title_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/text_title_description"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_reminder_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_reminder_title_header"
+            app:layout_constraintStart_toStartOf="@+id/tv_reminder_title_header"
+            app:layout_constraintTop_toBottomOf="@+id/tv_reminder_title_header"
+            android:text="@{reminderDataItem.title}"
+            tools:text="Reminder Title" />
+
+        <TextView
+            android:id="@+id/tv_reminder_description_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{reminderDataItem.description}"
+            app:layout_constraintEnd_toEndOf="@+id/tv_description_header"
+            app:layout_constraintStart_toStartOf="@+id/tv_description_header"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description_header"
+            tools:text="Description text" />
+
+        <TextView
+            android:id="@+id/tv_reminder_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:drawableStart="@drawable/ic_location"
+            android:drawableLeft="@drawable/ic_location"
+            android:text="@{reminderDataItem.location}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintEnd_toEndOf="@+id/tv_reminder_description_text"
+            app:layout_constraintStart_toStartOf="@+id/tv_reminder_description_text"
+            app:layout_constraintTop_toBottomOf="@+id/tv_reminder_description_text"
+            tools:text="Reminder location" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
